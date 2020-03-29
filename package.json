@@ -1,0 +1,27 @@
+{
+  "name": "@oojob/protorepo-job-node",
+  "version": "0.0.1",
+  "description": "job service grpc generated code",
+  "main": "service_pb.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oojob/protorepo-job-node.git"
+  },
+  "keywords": [],
+  "author": "nirajgeorgian <nirajgeorgian@gmail.com> (https://github.com/nirajgeorgian)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oojob/protorepo-job-node/issues"
+  },
+  "homepage": "https://github.com/oojob/protorepo-job-node#readme",
+  "dependencies": {
+    "@types/google-protobuf": "^3.7.2",
+    "google-protobuf": "^3.11.4"
+  }
+}
