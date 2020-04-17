@@ -26,6 +26,28 @@ function deserialize_job_CreateJobRes(buffer_arg) {
   return service_pb.CreateJobRes.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_job_HealthCheckRequest(arg) {
+  if (!(arg instanceof service_pb.HealthCheckRequest)) {
+    throw new Error('Expected argument of type job.HealthCheckRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_job_HealthCheckRequest(buffer_arg) {
+  return service_pb.HealthCheckRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_job_HealthCheckResponse(arg) {
+  if (!(arg instanceof service_pb.HealthCheckResponse)) {
+    throw new Error('Expected argument of type job.HealthCheckResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_job_HealthCheckResponse(buffer_arg) {
+  return service_pb.HealthCheckResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 var JobService = exports.JobService = {
   createJob: {
@@ -38,6 +60,28 @@ var JobService = exports.JobService = {
     requestDeserialize: deserialize_job_CreateJobReq,
     responseSerialize: serialize_job_CreateJobRes,
     responseDeserialize: deserialize_job_CreateJobRes,
+  },
+  check: {
+    path: '/job.Job/Check',
+    requestStream: false,
+    responseStream: false,
+    requestType: service_pb.HealthCheckRequest,
+    responseType: service_pb.HealthCheckResponse,
+    requestSerialize: serialize_job_HealthCheckRequest,
+    requestDeserialize: deserialize_job_HealthCheckRequest,
+    responseSerialize: serialize_job_HealthCheckResponse,
+    responseDeserialize: deserialize_job_HealthCheckResponse,
+  },
+  watch: {
+    path: '/job.Job/Watch',
+    requestStream: false,
+    responseStream: true,
+    requestType: service_pb.HealthCheckRequest,
+    responseType: service_pb.HealthCheckResponse,
+    requestSerialize: serialize_job_HealthCheckRequest,
+    requestDeserialize: deserialize_job_HealthCheckRequest,
+    responseSerialize: serialize_job_HealthCheckResponse,
+    responseDeserialize: deserialize_job_HealthCheckResponse,
   },
 };
 

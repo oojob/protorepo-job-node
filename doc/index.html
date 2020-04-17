@@ -186,6 +186,18 @@
                   <a href="#job.CreateJobRes"><span class="badge">M</span>CreateJobRes</a>
                 </li>
               
+                <li>
+                  <a href="#job.HealthCheckRequest"><span class="badge">M</span>HealthCheckRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#job.HealthCheckResponse"><span class="badge">M</span>HealthCheckResponse</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#job.HealthCheckResponse.ServingStatus"><span class="badge">E</span>HealthCheckResponse.ServingStatus</a>
+                </li>
               
               
               
@@ -277,7 +289,84 @@
 
         
       
+        <h3 id="job.HealthCheckRequest">HealthCheckRequest</h3>
+        <p>health report</p>
 
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>service</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="job.HealthCheckResponse">HealthCheckResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#job.HealthCheckResponse.ServingStatus">HealthCheckResponse.ServingStatus</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="job.HealthCheckResponse.ServingStatus">HealthCheckResponse.ServingStatus</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>UNKNOWN</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>SERVING</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>NOT_SERVING</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
       
 
       
@@ -295,6 +384,20 @@
                 <td>CreateJob</td>
                 <td><a href="#job.CreateJobReq">CreateJobReq</a></td>
                 <td><a href="#job.CreateJobRes">CreateJobRes</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Check</td>
+                <td><a href="#job.HealthCheckRequest">HealthCheckRequest</a></td>
+                <td><a href="#job.HealthCheckResponse">HealthCheckResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Watch</td>
+                <td><a href="#job.HealthCheckRequest">HealthCheckRequest</a></td>
+                <td><a href="#job.HealthCheckResponse">HealthCheckResponse</a> stream</td>
                 <td><p></p></td>
               </tr>
             
