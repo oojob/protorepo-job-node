@@ -1,7 +1,82 @@
 // package: job
-// file: service.proto
+// file: services/job/service.proto
 
 import * as jspb from "google-protobuf";
+import * as oojob_protobuf_place_pb from "../../oojob/protobuf/place_pb";
+import * as oojob_protobuf_metadata_pb from "../../oojob/protobuf/metadata_pb";
+import * as oojob_protobuf_time_pb from "../../oojob/protobuf/time_pb";
+import * as oojob_protobuf_system_pb from "../../oojob/protobuf/system_pb";
+import * as oojob_protobuf_health_pb from "../../oojob/protobuf/health_pb";
+
+export class Job extends jspb.Message {
+  hasIdentity(): boolean;
+  clearIdentity(): void;
+  getIdentity(): oojob_protobuf_system_pb.Identifier | undefined;
+  setIdentity(value?: oojob_protobuf_system_pb.Identifier): void;
+
+  getEmployment(): string;
+  setEmployment(value: string): void;
+
+  hasSalary(): boolean;
+  clearSalary(): void;
+  getSalary(): oojob_protobuf_system_pb.Range | undefined;
+  setSalary(value?: oojob_protobuf_system_pb.Range): void;
+
+  hasExperience(): boolean;
+  clearExperience(): void;
+  getExperience(): oojob_protobuf_system_pb.Range | undefined;
+  setExperience(value?: oojob_protobuf_system_pb.Range): void;
+
+  hasTime(): boolean;
+  clearTime(): void;
+  getTime(): oojob_protobuf_time_pb.Time | undefined;
+  setTime(value?: oojob_protobuf_time_pb.Time): void;
+
+  clearSkillsList(): void;
+  getSkillsList(): Array<string>;
+  setSkillsList(value: Array<string>): void;
+  addSkills(value: string, index?: number): string;
+
+  getWorkingHours(): string;
+  setWorkingHours(value: string): void;
+
+  getStatus(): string;
+  setStatus(value: string): void;
+
+  hasPlace(): boolean;
+  clearPlace(): void;
+  getPlace(): oojob_protobuf_place_pb.Place | undefined;
+  setPlace(value?: oojob_protobuf_place_pb.Place): void;
+
+  hasMetadata(): boolean;
+  clearMetadata(): void;
+  getMetadata(): oojob_protobuf_metadata_pb.Metadata | undefined;
+  setMetadata(value?: oojob_protobuf_metadata_pb.Metadata): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Job.AsObject;
+  static toObject(includeInstance: boolean, msg: Job): Job.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Job, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Job;
+  static deserializeBinaryFromReader(message: Job, reader: jspb.BinaryReader): Job;
+}
+
+export namespace Job {
+  export type AsObject = {
+    identity?: oojob_protobuf_system_pb.Identifier.AsObject,
+    employment: string,
+    salary?: oojob_protobuf_system_pb.Range.AsObject,
+    experience?: oojob_protobuf_system_pb.Range.AsObject,
+    time?: oojob_protobuf_time_pb.Time.AsObject,
+    skillsList: Array<string>,
+    workingHours: string,
+    status: string,
+    place?: oojob_protobuf_place_pb.Place.AsObject,
+    metadata?: oojob_protobuf_metadata_pb.Metadata.AsObject,
+  }
+}
 
 export class CreateJobReq extends jspb.Message {
   getName(): string;
@@ -53,53 +128,5 @@ export namespace CreateJobRes {
     status: boolean,
     id: string,
   }
-}
-
-export class HealthCheckRequest extends jspb.Message {
-  getService(): string;
-  setService(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HealthCheckRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: HealthCheckRequest): HealthCheckRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: HealthCheckRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HealthCheckRequest;
-  static deserializeBinaryFromReader(message: HealthCheckRequest, reader: jspb.BinaryReader): HealthCheckRequest;
-}
-
-export namespace HealthCheckRequest {
-  export type AsObject = {
-    service: string,
-  }
-}
-
-export class HealthCheckResponse extends jspb.Message {
-  getStatus(): HealthCheckResponse.ServingStatusMap[keyof HealthCheckResponse.ServingStatusMap];
-  setStatus(value: HealthCheckResponse.ServingStatusMap[keyof HealthCheckResponse.ServingStatusMap]): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HealthCheckResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: HealthCheckResponse): HealthCheckResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: HealthCheckResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HealthCheckResponse;
-  static deserializeBinaryFromReader(message: HealthCheckResponse, reader: jspb.BinaryReader): HealthCheckResponse;
-}
-
-export namespace HealthCheckResponse {
-  export type AsObject = {
-    status: HealthCheckResponse.ServingStatusMap[keyof HealthCheckResponse.ServingStatusMap],
-  }
-
-  export interface ServingStatusMap {
-    UNKNOWN: 0;
-    SERVING: 1;
-    NOT_SERVING: 2;
-  }
-
-  export const ServingStatus: ServingStatusMap;
 }
 
