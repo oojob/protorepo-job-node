@@ -2,35 +2,35 @@
 // file: services/job/service.proto
 
 import * as jspb from "google-protobuf";
-import * as oojob_github_com_protobuf_place_pb from "../../oojob/github.com/protobuf/place_pb";
-import * as oojob_github_com_protobuf_metadata_pb from "../../oojob/github.com/protobuf/metadata_pb";
-import * as oojob_github_com_protobuf_time_pb from "../../oojob/github.com/protobuf/time_pb";
-import * as oojob_github_com_protobuf_system_pb from "../../oojob/github.com/protobuf/system_pb";
-import * as oojob_github_com_protobuf_health_pb from "../../oojob/github.com/protobuf/health_pb";
+import * as github_com_oojob_protobuf_place_pb from "../../github.com/oojob/protobuf/place_pb";
+import * as github_com_oojob_protobuf_metadata_pb from "../../github.com/oojob/protobuf/metadata_pb";
+import * as github_com_oojob_protobuf_time_pb from "../../github.com/oojob/protobuf/time_pb";
+import * as github_com_oojob_protobuf_system_pb from "../../github.com/oojob/protobuf/system_pb";
+import * as github_com_oojob_protobuf_health_pb from "../../github.com/oojob/protobuf/health_pb";
 
 export class Job extends jspb.Message {
   hasIdentity(): boolean;
   clearIdentity(): void;
-  getIdentity(): oojob_github_com_protobuf_system_pb.Identifier | undefined;
-  setIdentity(value?: oojob_github_com_protobuf_system_pb.Identifier): void;
+  getIdentity(): github_com_oojob_protobuf_system_pb.Identifier | undefined;
+  setIdentity(value?: github_com_oojob_protobuf_system_pb.Identifier): void;
 
   getEmployment(): string;
   setEmployment(value: string): void;
 
   hasSalary(): boolean;
   clearSalary(): void;
-  getSalary(): oojob_github_com_protobuf_system_pb.Range | undefined;
-  setSalary(value?: oojob_github_com_protobuf_system_pb.Range): void;
+  getSalary(): github_com_oojob_protobuf_system_pb.Range | undefined;
+  setSalary(value?: github_com_oojob_protobuf_system_pb.Range): void;
 
   hasExperience(): boolean;
   clearExperience(): void;
-  getExperience(): oojob_github_com_protobuf_system_pb.Range | undefined;
-  setExperience(value?: oojob_github_com_protobuf_system_pb.Range): void;
+  getExperience(): github_com_oojob_protobuf_system_pb.Range | undefined;
+  setExperience(value?: github_com_oojob_protobuf_system_pb.Range): void;
 
   hasTime(): boolean;
   clearTime(): void;
-  getTime(): oojob_github_com_protobuf_time_pb.Time | undefined;
-  setTime(value?: oojob_github_com_protobuf_time_pb.Time): void;
+  getTime(): github_com_oojob_protobuf_time_pb.Time | undefined;
+  setTime(value?: github_com_oojob_protobuf_time_pb.Time): void;
 
   clearSkillsList(): void;
   getSkillsList(): Array<string>;
@@ -45,13 +45,13 @@ export class Job extends jspb.Message {
 
   hasPlace(): boolean;
   clearPlace(): void;
-  getPlace(): oojob_github_com_protobuf_place_pb.Place | undefined;
-  setPlace(value?: oojob_github_com_protobuf_place_pb.Place): void;
+  getPlace(): github_com_oojob_protobuf_place_pb.Place | undefined;
+  setPlace(value?: github_com_oojob_protobuf_place_pb.Place): void;
 
   hasMetadata(): boolean;
   clearMetadata(): void;
-  getMetadata(): oojob_github_com_protobuf_metadata_pb.Metadata | undefined;
-  setMetadata(value?: oojob_github_com_protobuf_metadata_pb.Metadata): void;
+  getMetadata(): github_com_oojob_protobuf_metadata_pb.Metadata | undefined;
+  setMetadata(value?: github_com_oojob_protobuf_metadata_pb.Metadata): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Job.AsObject;
@@ -65,16 +65,16 @@ export class Job extends jspb.Message {
 
 export namespace Job {
   export type AsObject = {
-    identity?: oojob_github_com_protobuf_system_pb.Identifier.AsObject,
+    identity?: github_com_oojob_protobuf_system_pb.Identifier.AsObject,
     employment: string,
-    salary?: oojob_github_com_protobuf_system_pb.Range.AsObject,
-    experience?: oojob_github_com_protobuf_system_pb.Range.AsObject,
-    time?: oojob_github_com_protobuf_time_pb.Time.AsObject,
+    salary?: github_com_oojob_protobuf_system_pb.Range.AsObject,
+    experience?: github_com_oojob_protobuf_system_pb.Range.AsObject,
+    time?: github_com_oojob_protobuf_time_pb.Time.AsObject,
     skillsList: Array<string>,
     workingHours: string,
     status: string,
-    place?: oojob_github_com_protobuf_place_pb.Place.AsObject,
-    metadata?: oojob_github_com_protobuf_metadata_pb.Metadata.AsObject,
+    place?: github_com_oojob_protobuf_place_pb.Place.AsObject,
+    metadata?: github_com_oojob_protobuf_metadata_pb.Metadata.AsObject,
   }
 }
 
