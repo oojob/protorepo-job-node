@@ -19,6 +19,28 @@ var oojob_protobuf_time_pb = require('../../oojob/protobuf/time_pb.js');
 var oojob_protobuf_system_pb = require('../../oojob/protobuf/system_pb.js');
 var oojob_protobuf_health_pb = require('../../oojob/protobuf/health_pb.js');
 
+function serialize_github_com_oojob_protobuf_HealthCheckRequest(arg) {
+  if (!(arg instanceof oojob_protobuf_health_pb.HealthCheckRequest)) {
+    throw new Error('Expected argument of type github.com.oojob.protobuf.HealthCheckRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_github_com_oojob_protobuf_HealthCheckRequest(buffer_arg) {
+  return oojob_protobuf_health_pb.HealthCheckRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_github_com_oojob_protobuf_HealthCheckResponse(arg) {
+  if (!(arg instanceof oojob_protobuf_health_pb.HealthCheckResponse)) {
+    throw new Error('Expected argument of type github.com.oojob.protobuf.HealthCheckResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_github_com_oojob_protobuf_HealthCheckResponse(buffer_arg) {
+  return oojob_protobuf_health_pb.HealthCheckResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_job_CreateJobReq(arg) {
   if (!(arg instanceof services_job_service_pb.CreateJobReq)) {
     throw new Error('Expected argument of type job.CreateJobReq');
@@ -41,28 +63,6 @@ function deserialize_job_CreateJobRes(buffer_arg) {
   return services_job_service_pb.CreateJobRes.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_oojob_protobuf_HealthCheckRequest(arg) {
-  if (!(arg instanceof oojob_protobuf_health_pb.HealthCheckRequest)) {
-    throw new Error('Expected argument of type oojob.protobuf.HealthCheckRequest');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_oojob_protobuf_HealthCheckRequest(buffer_arg) {
-  return oojob_protobuf_health_pb.HealthCheckRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_oojob_protobuf_HealthCheckResponse(arg) {
-  if (!(arg instanceof oojob_protobuf_health_pb.HealthCheckResponse)) {
-    throw new Error('Expected argument of type oojob.protobuf.HealthCheckResponse');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_oojob_protobuf_HealthCheckResponse(buffer_arg) {
-  return oojob_protobuf_health_pb.HealthCheckResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 
 var JobServiceService = exports.JobServiceService = {
   createJob: {
@@ -82,10 +82,10 @@ var JobServiceService = exports.JobServiceService = {
     responseStream: false,
     requestType: oojob_protobuf_health_pb.HealthCheckRequest,
     responseType: oojob_protobuf_health_pb.HealthCheckResponse,
-    requestSerialize: serialize_oojob_protobuf_HealthCheckRequest,
-    requestDeserialize: deserialize_oojob_protobuf_HealthCheckRequest,
-    responseSerialize: serialize_oojob_protobuf_HealthCheckResponse,
-    responseDeserialize: deserialize_oojob_protobuf_HealthCheckResponse,
+    requestSerialize: serialize_github_com_oojob_protobuf_HealthCheckRequest,
+    requestDeserialize: deserialize_github_com_oojob_protobuf_HealthCheckRequest,
+    responseSerialize: serialize_github_com_oojob_protobuf_HealthCheckResponse,
+    responseDeserialize: deserialize_github_com_oojob_protobuf_HealthCheckResponse,
   },
   watch: {
     path: '/job.JobService/Watch',
@@ -93,10 +93,10 @@ var JobServiceService = exports.JobServiceService = {
     responseStream: true,
     requestType: oojob_protobuf_health_pb.HealthCheckRequest,
     responseType: oojob_protobuf_health_pb.HealthCheckResponse,
-    requestSerialize: serialize_oojob_protobuf_HealthCheckRequest,
-    requestDeserialize: deserialize_oojob_protobuf_HealthCheckRequest,
-    responseSerialize: serialize_oojob_protobuf_HealthCheckResponse,
-    responseDeserialize: deserialize_oojob_protobuf_HealthCheckResponse,
+    requestSerialize: serialize_github_com_oojob_protobuf_HealthCheckRequest,
+    requestDeserialize: deserialize_github_com_oojob_protobuf_HealthCheckRequest,
+    responseSerialize: serialize_github_com_oojob_protobuf_HealthCheckResponse,
+    responseDeserialize: deserialize_github_com_oojob_protobuf_HealthCheckResponse,
   },
 };
 
