@@ -22,6 +22,8 @@ var github_com_oojob_protobuf_system_pb = require('../../github.com/oojob/protob
 goog.object.extend(proto, github_com_oojob_protobuf_system_pb);
 var github_com_oojob_protobuf_health_pb = require('../../github.com/oojob/protobuf/health_pb.js');
 goog.object.extend(proto, github_com_oojob_protobuf_health_pb);
+var github_com_oojob_protobuf_applicants_pb = require('../../github.com/oojob/protobuf/applicants_pb.js');
+goog.object.extend(proto, github_com_oojob_protobuf_applicants_pb);
 goog.exportSymbol('proto.job.CreateJobReq', null, global);
 goog.exportSymbol('proto.job.CreateJobRes', null, global);
 goog.exportSymbol('proto.job.Job', null, global);
@@ -94,7 +96,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.job.Job.repeatedFields_ = [6];
+proto.job.Job.repeatedFields_ = [6,9];
 
 
 
@@ -135,8 +137,10 @@ proto.job.Job.toObject = function(includeInstance, msg) {
     skillsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
     workingHours: jspb.Message.getFieldWithDefault(msg, 7, ""),
     status: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    qualificationList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
     place: (f = msg.getPlace()) && github_com_oojob_protobuf_place_pb.Place.toObject(includeInstance, f),
-    metadata: (f = msg.getMetadata()) && github_com_oojob_protobuf_metadata_pb.Metadata.toObject(includeInstance, f)
+    metadata: (f = msg.getMetadata()) && github_com_oojob_protobuf_metadata_pb.Metadata.toObject(includeInstance, f),
+    applicants: (f = msg.getApplicants()) && github_com_oojob_protobuf_applicants_pb.Applicant.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -210,14 +214,23 @@ proto.job.Job.deserializeBinaryFromReader = function(msg, reader) {
       msg.setStatus(value);
       break;
     case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addQualification(value);
+      break;
+    case 10:
       var value = new github_com_oojob_protobuf_place_pb.Place;
       reader.readMessage(value,github_com_oojob_protobuf_place_pb.Place.deserializeBinaryFromReader);
       msg.setPlace(value);
       break;
-    case 10:
+    case 11:
       var value = new github_com_oojob_protobuf_metadata_pb.Metadata;
       reader.readMessage(value,github_com_oojob_protobuf_metadata_pb.Metadata.deserializeBinaryFromReader);
       msg.setMetadata(value);
+      break;
+    case 12:
+      var value = new github_com_oojob_protobuf_applicants_pb.Applicant;
+      reader.readMessage(value,github_com_oojob_protobuf_applicants_pb.Applicant.deserializeBinaryFromReader);
+      msg.setApplicants(value);
       break;
     default:
       reader.skipField();
@@ -308,10 +321,17 @@ proto.job.Job.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getQualificationList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      9,
+      f
+    );
+  }
   f = message.getPlace();
   if (f != null) {
     writer.writeMessage(
-      9,
+      10,
       f,
       github_com_oojob_protobuf_place_pb.Place.serializeBinaryToWriter
     );
@@ -319,9 +339,17 @@ proto.job.Job.serializeBinaryToWriter = function(message, writer) {
   f = message.getMetadata();
   if (f != null) {
     writer.writeMessage(
-      10,
+      11,
       f,
       github_com_oojob_protobuf_metadata_pb.Metadata.serializeBinaryToWriter
+    );
+  }
+  f = message.getApplicants();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      github_com_oojob_protobuf_applicants_pb.Applicant.serializeBinaryToWriter
     );
   }
 };
@@ -567,12 +595,49 @@ proto.job.Job.prototype.setStatus = function(value) {
 
 
 /**
- * optional github.com.oojob.protobuf.Place place = 9;
+ * repeated string qualification = 9;
+ * @return {!Array<string>}
+ */
+proto.job.Job.prototype.getQualificationList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.job.Job} returns this
+ */
+proto.job.Job.prototype.setQualificationList = function(value) {
+  return jspb.Message.setField(this, 9, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.job.Job} returns this
+ */
+proto.job.Job.prototype.addQualification = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.job.Job} returns this
+ */
+proto.job.Job.prototype.clearQualificationList = function() {
+  return this.setQualificationList([]);
+};
+
+
+/**
+ * optional github.com.oojob.protobuf.Place place = 10;
  * @return {?proto.github.com.oojob.protobuf.Place}
  */
 proto.job.Job.prototype.getPlace = function() {
   return /** @type{?proto.github.com.oojob.protobuf.Place} */ (
-    jspb.Message.getWrapperField(this, github_com_oojob_protobuf_place_pb.Place, 9));
+    jspb.Message.getWrapperField(this, github_com_oojob_protobuf_place_pb.Place, 10));
 };
 
 
@@ -581,7 +646,7 @@ proto.job.Job.prototype.getPlace = function() {
  * @return {!proto.job.Job} returns this
 */
 proto.job.Job.prototype.setPlace = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -599,17 +664,17 @@ proto.job.Job.prototype.clearPlace = function() {
  * @return {boolean}
  */
 proto.job.Job.prototype.hasPlace = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional github.com.oojob.protobuf.Metadata metadata = 10;
+ * optional github.com.oojob.protobuf.Metadata metadata = 11;
  * @return {?proto.github.com.oojob.protobuf.Metadata}
  */
 proto.job.Job.prototype.getMetadata = function() {
   return /** @type{?proto.github.com.oojob.protobuf.Metadata} */ (
-    jspb.Message.getWrapperField(this, github_com_oojob_protobuf_metadata_pb.Metadata, 10));
+    jspb.Message.getWrapperField(this, github_com_oojob_protobuf_metadata_pb.Metadata, 11));
 };
 
 
@@ -618,7 +683,7 @@ proto.job.Job.prototype.getMetadata = function() {
  * @return {!proto.job.Job} returns this
 */
 proto.job.Job.prototype.setMetadata = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -636,7 +701,44 @@ proto.job.Job.prototype.clearMetadata = function() {
  * @return {boolean}
  */
 proto.job.Job.prototype.hasMetadata = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional github.com.oojob.protobuf.Applicant applicants = 12;
+ * @return {?proto.github.com.oojob.protobuf.Applicant}
+ */
+proto.job.Job.prototype.getApplicants = function() {
+  return /** @type{?proto.github.com.oojob.protobuf.Applicant} */ (
+    jspb.Message.getWrapperField(this, github_com_oojob_protobuf_applicants_pb.Applicant, 12));
+};
+
+
+/**
+ * @param {?proto.github.com.oojob.protobuf.Applicant|undefined} value
+ * @return {!proto.job.Job} returns this
+*/
+proto.job.Job.prototype.setApplicants = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.job.Job} returns this
+ */
+proto.job.Job.prototype.clearApplicants = function() {
+  return this.setApplicants(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.job.Job.prototype.hasApplicants = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 

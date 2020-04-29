@@ -7,6 +7,7 @@ import * as github_com_oojob_protobuf_metadata_pb from "../../github.com/oojob/p
 import * as github_com_oojob_protobuf_time_pb from "../../github.com/oojob/protobuf/time_pb";
 import * as github_com_oojob_protobuf_system_pb from "../../github.com/oojob/protobuf/system_pb";
 import * as github_com_oojob_protobuf_health_pb from "../../github.com/oojob/protobuf/health_pb";
+import * as github_com_oojob_protobuf_applicants_pb from "../../github.com/oojob/protobuf/applicants_pb";
 
 export class Job extends jspb.Message {
   hasIdentity(): boolean;
@@ -43,6 +44,11 @@ export class Job extends jspb.Message {
   getStatus(): string;
   setStatus(value: string): void;
 
+  clearQualificationList(): void;
+  getQualificationList(): Array<string>;
+  setQualificationList(value: Array<string>): void;
+  addQualification(value: string, index?: number): string;
+
   hasPlace(): boolean;
   clearPlace(): void;
   getPlace(): github_com_oojob_protobuf_place_pb.Place | undefined;
@@ -52,6 +58,11 @@ export class Job extends jspb.Message {
   clearMetadata(): void;
   getMetadata(): github_com_oojob_protobuf_metadata_pb.Metadata | undefined;
   setMetadata(value?: github_com_oojob_protobuf_metadata_pb.Metadata): void;
+
+  hasApplicants(): boolean;
+  clearApplicants(): void;
+  getApplicants(): github_com_oojob_protobuf_applicants_pb.Applicant | undefined;
+  setApplicants(value?: github_com_oojob_protobuf_applicants_pb.Applicant): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Job.AsObject;
@@ -73,8 +84,10 @@ export namespace Job {
     skillsList: Array<string>,
     workingHours: string,
     status: string,
+    qualificationList: Array<string>,
     place?: github_com_oojob_protobuf_place_pb.Place.AsObject,
     metadata?: github_com_oojob_protobuf_metadata_pb.Metadata.AsObject,
+    applicants?: github_com_oojob_protobuf_applicants_pb.Applicant.AsObject,
   }
 }
 

@@ -18,6 +18,7 @@ var github_com_oojob_protobuf_metadata_pb = require('../../github.com/oojob/prot
 var github_com_oojob_protobuf_time_pb = require('../../github.com/oojob/protobuf/time_pb.js');
 var github_com_oojob_protobuf_system_pb = require('../../github.com/oojob/protobuf/system_pb.js');
 var github_com_oojob_protobuf_health_pb = require('../../github.com/oojob/protobuf/health_pb.js');
+var github_com_oojob_protobuf_applicants_pb = require('../../github.com/oojob/protobuf/applicants_pb.js');
 
 function serialize_github_com_oojob_protobuf_HealthCheckRequest(arg) {
   if (!(arg instanceof github_com_oojob_protobuf_health_pb.HealthCheckRequest)) {
