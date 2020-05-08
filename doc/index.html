@@ -179,15 +179,11 @@
             <ul>
               
                 <li>
-                  <a href="#job.CreateJobReq"><span class="badge">M</span>CreateJobReq</a>
-                </li>
-              
-                <li>
-                  <a href="#job.CreateJobRes"><span class="badge">M</span>CreateJobRes</a>
-                </li>
-              
-                <li>
                   <a href="#job.Job"><span class="badge">M</span>Job</a>
+                </li>
+              
+                <li>
+                  <a href="#job.JobAllResponse"><span class="badge">M</span>JobAllResponse</a>
                 </li>
               
               
@@ -209,77 +205,8 @@
       <div class="file-heading">
         <h2 id="services/job/service.proto">services/job/service.proto</h2><a href="#title">Top</a>
       </div>
-      <p>Created on Sun Apr 27 2020</p><p>Job entity related messages.</p><p>This file is resposible for all operation related to job entity.</p><p>@authors nirajgeorgian@oojob.io (Niraj Kishore)</p><p>Copyright (c) 2020 - oojob</p>
+      <p>Created on Sun Apr 27 2020</p><p>Lasted Updated on Thu May 7 2020 by Naseem Ali</p><p>Job entity related messages.</p><p>This file is resposible for all operation related to job entity.</p><p>@authors nirajgeorgian@oojob.io (Niraj Kishore)</p><p>@authors naseem.ali.925@gmail.com (Naseem Ali)</p><p>Copyright (c) 2020 - oojob</p>
 
-      
-        <h3 id="job.CreateJobReq">CreateJobReq</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>name</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>descriptioon</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>category</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="job.CreateJobRes">CreateJobRes</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>status</td>
-                  <td><a href="#bool">bool</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
       
         <h3 id="job.Job">Job</h3>
         <p></p>
@@ -293,44 +220,49 @@
               
                 <tr>
                   <td>identity</td>
-                  <td><a href="#github.com.oojob.protobuf.Identifier">github.com.oojob.protobuf.Identifier</a></td>
+                  <td><a href="#oojob.protobuf.Identifier">oojob.protobuf.Identifier</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>company identifier: Is the id of company that create this job. </p></td>
                 </tr>
               
                 <tr>
                   <td>employment</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>fulltime/ parttime / remote </p></td>
+                  <td><p>employment: Denotes the employment type for this job.
+
+fulltime/ parttime / remote </p></td>
                 </tr>
               
                 <tr>
                   <td>salary</td>
-                  <td><a href="#github.com.oojob.protobuf.Range">github.com.oojob.protobuf.Range</a></td>
+                  <td><a href="#oojob.protobuf.Range">oojob.protobuf.Range</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>salary: Used to define salary range offered for this job. </p></td>
                 </tr>
               
                 <tr>
                   <td>experience</td>
-                  <td><a href="#github.com.oojob.protobuf.Range">github.com.oojob.protobuf.Range</a></td>
+                  <td><a href="#oojob.protobuf.Range">oojob.protobuf.Range</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>salary: Used to define experience(years) required for this job. </p></td>
                 </tr>
               
                 <tr>
                   <td>time</td>
-                  <td><a href="#github.com.oojob.protobuf.Time">github.com.oojob.protobuf.Time</a></td>
+                  <td><a href="#oojob.protobuf.Time">oojob.protobuf.Time</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>valid_from: Used to define date that the job becomes valid for applicants.
+/ valid_through: Used to define date that the job becomes invalid for
+/ applicants. </p></td>
                 </tr>
               
                 <tr>
                   <td>skills</td>
                   <td><a href="#string">string</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>skills: Used to define the skills required for this job. e.g
+/ [java,javascript,c&#43;&#43;,..,c] </p></td>
                 </tr>
               
                 <tr>
@@ -344,35 +276,70 @@
                   <td>status</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>opened / closed / block / expired </p></td>
+                  <td><p>status: Indicates if the job is open||closed||expired||blocked
+
+opened / closed / block / expired </p></td>
                 </tr>
               
                 <tr>
                   <td>qualification</td>
                   <td><a href="#string">string</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>qualifications: Used to define the qualifications required for this job.
+/ e.g [BS,MS,A Level,..,O Level] </p></td>
+                </tr>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>type: Indicates if the job is remote||inoffice||contract||parttime||full
+/ time </p></td>
                 </tr>
               
                 <tr>
                   <td>place</td>
-                  <td><a href="#github.com.oojob.protobuf.Place">github.com.oojob.protobuf.Place</a></td>
+                  <td><a href="#oojob.protobuf.Place">oojob.protobuf.Place</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>metadata</td>
-                  <td><a href="#github.com.oojob.protobuf.Metadata">github.com.oojob.protobuf.Metadata</a></td>
+                  <td><a href="#oojob.protobuf.Metadata">oojob.protobuf.Metadata</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>applicants</td>
-                  <td><a href="#github.com.oojob.protobuf.Applicant">github.com.oojob.protobuf.Applicant</a></td>
+                  <td><a href="#oojob.protobuf.Applicant">oojob.protobuf.Applicant</a></td>
                   <td></td>
                   <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="job.JobAllResponse">JobAllResponse</h3>
+        <p>JobAllResponse returns an array of jobs</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>jobs</td>
+                  <td><a href="#job.Job">Job</a></td>
+                  <td>repeated</td>
+                  <td><p>JobAllResponse jobs :- all jobs as array </p></td>
                 </tr>
               
             </tbody>
@@ -398,22 +365,57 @@
             
               <tr>
                 <td>CreateJob</td>
-                <td><a href="#job.CreateJobReq">CreateJobReq</a></td>
-                <td><a href="#job.CreateJobRes">CreateJobRes</a></td>
+                <td><a href="#job.Job">Job</a></td>
+                <td><a href="#oojob.protobuf.Id">.oojob.protobuf.Id</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ReadJob</td>
+                <td><a href="#oojob.protobuf.Id">.oojob.protobuf.Id</a></td>
+                <td><a href="#job.Job">Job</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateJob</td>
+                <td><a href="#job.Job">Job</a></td>
+                <td><a href="#oojob.protobuf.Id">.oojob.protobuf.Id</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DeleteJob</td>
+                <td><a href="#oojob.protobuf.Id">.oojob.protobuf.Id</a></td>
+                <td><a href="#oojob.protobuf.Id">.oojob.protobuf.Id</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ReadAllJobsByCompany</td>
+                <td><a href="#oojob.protobuf.Pagination">.oojob.protobuf.Pagination</a></td>
+                <td><a href="#job.JobAllResponse">JobAllResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ReadAllJobs</td>
+                <td><a href="#oojob.protobuf.Pagination">.oojob.protobuf.Pagination</a></td>
+                <td><a href="#job.JobAllResponse">JobAllResponse</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>Check</td>
-                <td><a href="#github.com.oojob.protobuf.HealthCheckRequest">.github.com.oojob.protobuf.HealthCheckRequest</a></td>
-                <td><a href="#github.com.oojob.protobuf.HealthCheckResponse">.github.com.oojob.protobuf.HealthCheckResponse</a></td>
+                <td><a href="#oojob.protobuf.HealthCheckRequest">.oojob.protobuf.HealthCheckRequest</a></td>
+                <td><a href="#oojob.protobuf.HealthCheckResponse">.oojob.protobuf.HealthCheckResponse</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>Watch</td>
-                <td><a href="#github.com.oojob.protobuf.HealthCheckRequest">.github.com.oojob.protobuf.HealthCheckRequest</a></td>
-                <td><a href="#github.com.oojob.protobuf.HealthCheckResponse">.github.com.oojob.protobuf.HealthCheckResponse</a> stream</td>
+                <td><a href="#oojob.protobuf.HealthCheckRequest">.oojob.protobuf.HealthCheckRequest</a></td>
+                <td><a href="#oojob.protobuf.HealthCheckResponse">.oojob.protobuf.HealthCheckResponse</a> stream</td>
                 <td><p></p></td>
               </tr>
             
