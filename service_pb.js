@@ -12,20 +12,20 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var oojob_protobuf_place_pb = require('@oojob/oojob-protobuf/place_pb.js');
-goog.object.extend(proto, oojob_protobuf_place_pb);
-var oojob_protobuf_metadata_pb = require('@oojob/oojob-protobuf/metadata_pb.js');
-goog.object.extend(proto, oojob_protobuf_metadata_pb);
-var oojob_protobuf_time_pb = require('@oojob/oojob-protobuf/time_pb.js');
-goog.object.extend(proto, oojob_protobuf_time_pb);
-var oojob_protobuf_system_pb = require('@oojob/oojob-protobuf/system_pb.js');
-goog.object.extend(proto, oojob_protobuf_system_pb);
-var oojob_protobuf_health_pb = require('@oojob/oojob-protobuf/health_pb.js');
-goog.object.extend(proto, oojob_protobuf_health_pb);
-var oojob_protobuf_applicants_pb = require('@oojob/oojob-protobuf/applicants_pb.js');
-goog.object.extend(proto, oojob_protobuf_applicants_pb);
-var oojob_protobuf_cursor_pb = require('@oojob/oojob-protobuf/cursor_pb.js');
-goog.object.extend(proto, oojob_protobuf_cursor_pb);
+var github_com_oojob_protobuf_place_pb = require('@oojob/oojob-protobuf/place_pb.js');
+goog.object.extend(proto, github_com_oojob_protobuf_place_pb);
+var github_com_oojob_protobuf_metadata_pb = require('@oojob/oojob-protobuf/metadata_pb.js');
+goog.object.extend(proto, github_com_oojob_protobuf_metadata_pb);
+var github_com_oojob_protobuf_time_pb = require('@oojob/oojob-protobuf/time_pb.js');
+goog.object.extend(proto, github_com_oojob_protobuf_time_pb);
+var github_com_oojob_protobuf_system_pb = require('@oojob/oojob-protobuf/system_pb.js');
+goog.object.extend(proto, github_com_oojob_protobuf_system_pb);
+var github_com_oojob_protobuf_health_pb = require('@oojob/oojob-protobuf/health_pb.js');
+goog.object.extend(proto, github_com_oojob_protobuf_health_pb);
+var github_com_oojob_protobuf_applicants_pb = require('@oojob/oojob-protobuf/applicants_pb.js');
+goog.object.extend(proto, github_com_oojob_protobuf_applicants_pb);
+var github_com_oojob_protobuf_cursor_pb = require('@oojob/oojob-protobuf/cursor_pb.js');
+goog.object.extend(proto, github_com_oojob_protobuf_cursor_pb);
 goog.exportSymbol('proto.job.Job', null, global);
 goog.exportSymbol('proto.job.JobAllResponse', null, global);
 /**
@@ -109,19 +109,19 @@ proto.job.Job.prototype.toObject = function(opt_includeInstance) {
  */
 proto.job.Job.toObject = function(includeInstance, msg) {
   var f, obj = {
-    identity: (f = msg.getIdentity()) && oojob_protobuf_system_pb.Identifier.toObject(includeInstance, f),
+    identity: (f = msg.getIdentity()) && github_com_oojob_protobuf_system_pb.Identifier.toObject(includeInstance, f),
     employment: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    salary: (f = msg.getSalary()) && oojob_protobuf_system_pb.Range.toObject(includeInstance, f),
-    experience: (f = msg.getExperience()) && oojob_protobuf_system_pb.Range.toObject(includeInstance, f),
-    time: (f = msg.getTime()) && oojob_protobuf_time_pb.Time.toObject(includeInstance, f),
+    salary: (f = msg.getSalary()) && github_com_oojob_protobuf_system_pb.Range.toObject(includeInstance, f),
+    experience: (f = msg.getExperience()) && github_com_oojob_protobuf_system_pb.Range.toObject(includeInstance, f),
+    time: (f = msg.getTime()) && github_com_oojob_protobuf_time_pb.Time.toObject(includeInstance, f),
     skillsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
     workingHours: jspb.Message.getFieldWithDefault(msg, 7, ""),
     status: jspb.Message.getFieldWithDefault(msg, 8, ""),
     qualificationList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
     type: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    place: (f = msg.getPlace()) && oojob_protobuf_place_pb.Place.toObject(includeInstance, f),
-    metadata: (f = msg.getMetadata()) && oojob_protobuf_metadata_pb.Metadata.toObject(includeInstance, f),
-    applicants: (f = msg.getApplicants()) && oojob_protobuf_applicants_pb.Applicant.toObject(includeInstance, f)
+    place: (f = msg.getPlace()) && github_com_oojob_protobuf_place_pb.Place.toObject(includeInstance, f),
+    metadata: (f = msg.getMetadata()) && github_com_oojob_protobuf_metadata_pb.Metadata.toObject(includeInstance, f),
+    applicants: (f = msg.getApplicants()) && github_com_oojob_protobuf_applicants_pb.Applicant.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -159,8 +159,8 @@ proto.job.Job.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new oojob_protobuf_system_pb.Identifier;
-      reader.readMessage(value,oojob_protobuf_system_pb.Identifier.deserializeBinaryFromReader);
+      var value = new github_com_oojob_protobuf_system_pb.Identifier;
+      reader.readMessage(value,github_com_oojob_protobuf_system_pb.Identifier.deserializeBinaryFromReader);
       msg.setIdentity(value);
       break;
     case 2:
@@ -168,18 +168,18 @@ proto.job.Job.deserializeBinaryFromReader = function(msg, reader) {
       msg.setEmployment(value);
       break;
     case 3:
-      var value = new oojob_protobuf_system_pb.Range;
-      reader.readMessage(value,oojob_protobuf_system_pb.Range.deserializeBinaryFromReader);
+      var value = new github_com_oojob_protobuf_system_pb.Range;
+      reader.readMessage(value,github_com_oojob_protobuf_system_pb.Range.deserializeBinaryFromReader);
       msg.setSalary(value);
       break;
     case 4:
-      var value = new oojob_protobuf_system_pb.Range;
-      reader.readMessage(value,oojob_protobuf_system_pb.Range.deserializeBinaryFromReader);
+      var value = new github_com_oojob_protobuf_system_pb.Range;
+      reader.readMessage(value,github_com_oojob_protobuf_system_pb.Range.deserializeBinaryFromReader);
       msg.setExperience(value);
       break;
     case 5:
-      var value = new oojob_protobuf_time_pb.Time;
-      reader.readMessage(value,oojob_protobuf_time_pb.Time.deserializeBinaryFromReader);
+      var value = new github_com_oojob_protobuf_time_pb.Time;
+      reader.readMessage(value,github_com_oojob_protobuf_time_pb.Time.deserializeBinaryFromReader);
       msg.setTime(value);
       break;
     case 6:
@@ -203,18 +203,18 @@ proto.job.Job.deserializeBinaryFromReader = function(msg, reader) {
       msg.setType(value);
       break;
     case 11:
-      var value = new oojob_protobuf_place_pb.Place;
-      reader.readMessage(value,oojob_protobuf_place_pb.Place.deserializeBinaryFromReader);
+      var value = new github_com_oojob_protobuf_place_pb.Place;
+      reader.readMessage(value,github_com_oojob_protobuf_place_pb.Place.deserializeBinaryFromReader);
       msg.setPlace(value);
       break;
     case 12:
-      var value = new oojob_protobuf_metadata_pb.Metadata;
-      reader.readMessage(value,oojob_protobuf_metadata_pb.Metadata.deserializeBinaryFromReader);
+      var value = new github_com_oojob_protobuf_metadata_pb.Metadata;
+      reader.readMessage(value,github_com_oojob_protobuf_metadata_pb.Metadata.deserializeBinaryFromReader);
       msg.setMetadata(value);
       break;
     case 13:
-      var value = new oojob_protobuf_applicants_pb.Applicant;
-      reader.readMessage(value,oojob_protobuf_applicants_pb.Applicant.deserializeBinaryFromReader);
+      var value = new github_com_oojob_protobuf_applicants_pb.Applicant;
+      reader.readMessage(value,github_com_oojob_protobuf_applicants_pb.Applicant.deserializeBinaryFromReader);
       msg.setApplicants(value);
       break;
     default:
@@ -251,7 +251,7 @@ proto.job.Job.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       1,
       f,
-      oojob_protobuf_system_pb.Identifier.serializeBinaryToWriter
+      github_com_oojob_protobuf_system_pb.Identifier.serializeBinaryToWriter
     );
   }
   f = message.getEmployment();
@@ -266,7 +266,7 @@ proto.job.Job.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       3,
       f,
-      oojob_protobuf_system_pb.Range.serializeBinaryToWriter
+      github_com_oojob_protobuf_system_pb.Range.serializeBinaryToWriter
     );
   }
   f = message.getExperience();
@@ -274,7 +274,7 @@ proto.job.Job.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       4,
       f,
-      oojob_protobuf_system_pb.Range.serializeBinaryToWriter
+      github_com_oojob_protobuf_system_pb.Range.serializeBinaryToWriter
     );
   }
   f = message.getTime();
@@ -282,7 +282,7 @@ proto.job.Job.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       5,
       f,
-      oojob_protobuf_time_pb.Time.serializeBinaryToWriter
+      github_com_oojob_protobuf_time_pb.Time.serializeBinaryToWriter
     );
   }
   f = message.getSkillsList();
@@ -325,7 +325,7 @@ proto.job.Job.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       11,
       f,
-      oojob_protobuf_place_pb.Place.serializeBinaryToWriter
+      github_com_oojob_protobuf_place_pb.Place.serializeBinaryToWriter
     );
   }
   f = message.getMetadata();
@@ -333,7 +333,7 @@ proto.job.Job.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       12,
       f,
-      oojob_protobuf_metadata_pb.Metadata.serializeBinaryToWriter
+      github_com_oojob_protobuf_metadata_pb.Metadata.serializeBinaryToWriter
     );
   }
   f = message.getApplicants();
@@ -341,24 +341,24 @@ proto.job.Job.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       13,
       f,
-      oojob_protobuf_applicants_pb.Applicant.serializeBinaryToWriter
+      github_com_oojob_protobuf_applicants_pb.Applicant.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional oojob.protobuf.Identifier identity = 1;
- * @return {?proto.oojob.protobuf.Identifier}
+ * optional github.com.oojob.protobuf.Identifier identity = 1;
+ * @return {?proto.github.com.oojob.protobuf.Identifier}
  */
 proto.job.Job.prototype.getIdentity = function() {
-  return /** @type{?proto.oojob.protobuf.Identifier} */ (
-    jspb.Message.getWrapperField(this, oojob_protobuf_system_pb.Identifier, 1));
+  return /** @type{?proto.github.com.oojob.protobuf.Identifier} */ (
+    jspb.Message.getWrapperField(this, github_com_oojob_protobuf_system_pb.Identifier, 1));
 };
 
 
 /**
- * @param {?proto.oojob.protobuf.Identifier|undefined} value
+ * @param {?proto.github.com.oojob.protobuf.Identifier|undefined} value
  * @return {!proto.job.Job} returns this
 */
 proto.job.Job.prototype.setIdentity = function(value) {
@@ -403,17 +403,17 @@ proto.job.Job.prototype.setEmployment = function(value) {
 
 
 /**
- * optional oojob.protobuf.Range salary = 3;
- * @return {?proto.oojob.protobuf.Range}
+ * optional github.com.oojob.protobuf.Range salary = 3;
+ * @return {?proto.github.com.oojob.protobuf.Range}
  */
 proto.job.Job.prototype.getSalary = function() {
-  return /** @type{?proto.oojob.protobuf.Range} */ (
-    jspb.Message.getWrapperField(this, oojob_protobuf_system_pb.Range, 3));
+  return /** @type{?proto.github.com.oojob.protobuf.Range} */ (
+    jspb.Message.getWrapperField(this, github_com_oojob_protobuf_system_pb.Range, 3));
 };
 
 
 /**
- * @param {?proto.oojob.protobuf.Range|undefined} value
+ * @param {?proto.github.com.oojob.protobuf.Range|undefined} value
  * @return {!proto.job.Job} returns this
 */
 proto.job.Job.prototype.setSalary = function(value) {
@@ -440,17 +440,17 @@ proto.job.Job.prototype.hasSalary = function() {
 
 
 /**
- * optional oojob.protobuf.Range experience = 4;
- * @return {?proto.oojob.protobuf.Range}
+ * optional github.com.oojob.protobuf.Range experience = 4;
+ * @return {?proto.github.com.oojob.protobuf.Range}
  */
 proto.job.Job.prototype.getExperience = function() {
-  return /** @type{?proto.oojob.protobuf.Range} */ (
-    jspb.Message.getWrapperField(this, oojob_protobuf_system_pb.Range, 4));
+  return /** @type{?proto.github.com.oojob.protobuf.Range} */ (
+    jspb.Message.getWrapperField(this, github_com_oojob_protobuf_system_pb.Range, 4));
 };
 
 
 /**
- * @param {?proto.oojob.protobuf.Range|undefined} value
+ * @param {?proto.github.com.oojob.protobuf.Range|undefined} value
  * @return {!proto.job.Job} returns this
 */
 proto.job.Job.prototype.setExperience = function(value) {
@@ -477,17 +477,17 @@ proto.job.Job.prototype.hasExperience = function() {
 
 
 /**
- * optional oojob.protobuf.Time time = 5;
- * @return {?proto.oojob.protobuf.Time}
+ * optional github.com.oojob.protobuf.Time time = 5;
+ * @return {?proto.github.com.oojob.protobuf.Time}
  */
 proto.job.Job.prototype.getTime = function() {
-  return /** @type{?proto.oojob.protobuf.Time} */ (
-    jspb.Message.getWrapperField(this, oojob_protobuf_time_pb.Time, 5));
+  return /** @type{?proto.github.com.oojob.protobuf.Time} */ (
+    jspb.Message.getWrapperField(this, github_com_oojob_protobuf_time_pb.Time, 5));
 };
 
 
 /**
- * @param {?proto.oojob.protobuf.Time|undefined} value
+ * @param {?proto.github.com.oojob.protobuf.Time|undefined} value
  * @return {!proto.job.Job} returns this
 */
 proto.job.Job.prototype.setTime = function(value) {
@@ -642,17 +642,17 @@ proto.job.Job.prototype.setType = function(value) {
 
 
 /**
- * optional oojob.protobuf.Place place = 11;
- * @return {?proto.oojob.protobuf.Place}
+ * optional github.com.oojob.protobuf.Place place = 11;
+ * @return {?proto.github.com.oojob.protobuf.Place}
  */
 proto.job.Job.prototype.getPlace = function() {
-  return /** @type{?proto.oojob.protobuf.Place} */ (
-    jspb.Message.getWrapperField(this, oojob_protobuf_place_pb.Place, 11));
+  return /** @type{?proto.github.com.oojob.protobuf.Place} */ (
+    jspb.Message.getWrapperField(this, github_com_oojob_protobuf_place_pb.Place, 11));
 };
 
 
 /**
- * @param {?proto.oojob.protobuf.Place|undefined} value
+ * @param {?proto.github.com.oojob.protobuf.Place|undefined} value
  * @return {!proto.job.Job} returns this
 */
 proto.job.Job.prototype.setPlace = function(value) {
@@ -679,17 +679,17 @@ proto.job.Job.prototype.hasPlace = function() {
 
 
 /**
- * optional oojob.protobuf.Metadata metadata = 12;
- * @return {?proto.oojob.protobuf.Metadata}
+ * optional github.com.oojob.protobuf.Metadata metadata = 12;
+ * @return {?proto.github.com.oojob.protobuf.Metadata}
  */
 proto.job.Job.prototype.getMetadata = function() {
-  return /** @type{?proto.oojob.protobuf.Metadata} */ (
-    jspb.Message.getWrapperField(this, oojob_protobuf_metadata_pb.Metadata, 12));
+  return /** @type{?proto.github.com.oojob.protobuf.Metadata} */ (
+    jspb.Message.getWrapperField(this, github_com_oojob_protobuf_metadata_pb.Metadata, 12));
 };
 
 
 /**
- * @param {?proto.oojob.protobuf.Metadata|undefined} value
+ * @param {?proto.github.com.oojob.protobuf.Metadata|undefined} value
  * @return {!proto.job.Job} returns this
 */
 proto.job.Job.prototype.setMetadata = function(value) {
@@ -716,17 +716,17 @@ proto.job.Job.prototype.hasMetadata = function() {
 
 
 /**
- * optional oojob.protobuf.Applicant applicants = 13;
- * @return {?proto.oojob.protobuf.Applicant}
+ * optional github.com.oojob.protobuf.Applicant applicants = 13;
+ * @return {?proto.github.com.oojob.protobuf.Applicant}
  */
 proto.job.Job.prototype.getApplicants = function() {
-  return /** @type{?proto.oojob.protobuf.Applicant} */ (
-    jspb.Message.getWrapperField(this, oojob_protobuf_applicants_pb.Applicant, 13));
+  return /** @type{?proto.github.com.oojob.protobuf.Applicant} */ (
+    jspb.Message.getWrapperField(this, github_com_oojob_protobuf_applicants_pb.Applicant, 13));
 };
 
 
 /**
- * @param {?proto.oojob.protobuf.Applicant|undefined} value
+ * @param {?proto.github.com.oojob.protobuf.Applicant|undefined} value
  * @return {!proto.job.Job} returns this
 */
 proto.job.Job.prototype.setApplicants = function(value) {
