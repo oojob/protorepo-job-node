@@ -22,12 +22,12 @@
   },
   "homepage": "https://github.com/oojob/protorepo-job-node#readme",
   "dependencies": {
-    "@oojob/oojob-protobuf": "0.0.2",
-    "google-protobuf": "^3.11.4",
-    "grpc": "^1.24.2"
+    "@oojob/oojob-protobuf": "0.0.8",
+    "google-protobuf": "^3.12.2",
+    "grpc": "^1.24.3"
   },
   "devDependencies": {
     "@types/google-protobuf": "^3.7.2",
-    "standard-version": "^7.1.0"
+    "standard-version": "^8.0.0"
   }
 }
